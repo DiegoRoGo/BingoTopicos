@@ -1,11 +1,12 @@
-﻿using System;
+﻿using BingoWCF.Dominio.Modelos;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.Text;
 
-namespace BingoWCF
+namespace BingoWCF.Dominio.Interfaces
 {
     // NOTE: You can use the "Rename" command on the "Refactor" menu to change the interface name "IService1" in both code and config file together.
     [ServiceContract]
@@ -17,6 +18,7 @@ namespace BingoWCF
         [OperationContract]
         CompositeType GetDataUsingDataContract(CompositeType composite);
 
+        List<Board> GenerateBoards(int amount);
         // TODO: Add your service operations here
     }
 
