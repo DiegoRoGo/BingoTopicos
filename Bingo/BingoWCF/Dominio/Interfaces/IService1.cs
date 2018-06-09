@@ -18,8 +18,11 @@ namespace BingoWCF.Dominio.Interfaces
         [OperationContract]
         CompositeType GetDataUsingDataContract(CompositeType composite);
 
-        List<Board> GenerateBoards(int amount);
         // TODO: Add your service operations here
+
+        void MarkBoards(List<Board> Players, int number);
+
+        List<Board> GetWinningBoards(List<Board> players, Board winningPattern)
     }
 
     // Use a data contract as illustrated in the sample below to add composite types to service operations.

@@ -1,4 +1,6 @@
 ﻿using BingoWCF.Dominio.Interfaces;
+using BingoWCF.Dominio.Modelos;
+using BingoWCF.Dominio.Especificaciones;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -27,6 +29,16 @@ namespace BingoWCF.Dominio.Servicios
                 composite.StringValue += "Suffix";
             }
             return composite;
+        }
+
+        public List<Board> GetWinningBoards(List<Board> players, Board winningPattern)
+        {
+            return new EspecificacionesBingo().GetWinningBoards(players, winningPattern);
+        }
+
+        public void MarkBoards(List<Board> Players, int number)
+        {
+            new EspecificacionesBingo().MarkBoards(Players, number);
         }
     }
 }
