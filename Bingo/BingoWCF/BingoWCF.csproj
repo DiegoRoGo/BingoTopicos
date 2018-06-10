@@ -45,10 +45,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Dominio\Acciones\AccionesBingo.cs" />
+    <Compile Include="Dominio\Acciones\FillBoard.cs" />
+    <Compile Include="Dominio\Especificaciones\BoardGenerator.cs" />
     <Compile Include="Dominio\Especificaciones\EspecificacionesBingo.cs" />
     <Compile Include="Dominio\Interfaces\IService1.cs" />
     <Compile Include="Dominio\Modelos\Board.cs" />
     <Compile Include="Dominio\Modelos\Cell.cs" />
+    <Compile Include="Dominio\Modelos\Column.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Dominio\Servicios\Service1.cs" />
   </ItemGroup>
