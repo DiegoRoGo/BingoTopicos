@@ -32,7 +32,7 @@ namespace BingoWCF.Dominio.Acciones
             }
         }
 
-        public List<Board> GetWinningBoards(List<Board> players, Board winningPattern)
+        public List<Board> GetWinningBoards(List<Board> players, bool[,] winningPattern)
         {
             bool winner;
             List<Board> WinningPlayers = new List<Board>();
@@ -42,7 +42,7 @@ namespace BingoWCF.Dominio.Acciones
                 for (int i = 0; i < 5; i++)
                 {
                     for (int j = 0; j < 5; j++)
-                        if (winningPattern.GameBoard[i, j].IsMarked && !Player.GameBoard[i, j].IsMarked)
+                        if (winningPattern[i, j] && !Player.GameBoard[i, j].IsMarked)
                         {
                             winner = false;
                             break;
