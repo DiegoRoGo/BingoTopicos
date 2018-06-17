@@ -13,7 +13,7 @@ namespace BingoWCF.Dominio.Patrones
             Random rnd = new Random();
             int rndnum = rnd.Next(1,6);
 
-
+            //random pattern generator - 5 choices
             switch (rndnum)
             {
                 case 1:

@@ -328,3 +328,5 @@ ASALocalRun/
 
 # MFractors (Xamarin productivity tool) working folder 
 .mfractor/
+/Bingo/UnitTestProject1/Properties/AssemblyInfo.cs
+/Bingo/UnitTestProject1/packages.config
