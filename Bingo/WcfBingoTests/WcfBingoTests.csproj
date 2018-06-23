@@ -56,9 +56,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Bingo\Bingo.csproj">
-      <Project>{66cbf15c-1b06-4040-9fbc-71e6a6ffa9f5}</Project>
-      <Name>Bingo</Name>
+    <ProjectReference Include="..\WcfBingo\WcfBingo.csproj">
+      <Project>{f9f2ae8e-f78f-4746-a1ac-717891762394}</Project>
+      <Name>WcfBingo</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
