@@ -10,6 +10,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bingo", "Bingo\Bingo.csproj
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WcfBingo", "WcfBingo\WcfBingo.csproj", "{F9F2AE8E-F78F-4746-A1AC-717891762394}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WcfBingoTests", "WcfBingoTests\WcfBingoTests.csproj", "{A55D17A7-3A34-4767-89A7-8493F5055789}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -24,6 +26,10 @@ Global
 		{F9F2AE8E-F78F-4746-A1AC-717891762394}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F9F2AE8E-F78F-4746-A1AC-717891762394}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F9F2AE8E-F78F-4746-A1AC-717891762394}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A55D17A7-3A34-4767-89A7-8493F5055789}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A55D17A7-3A34-4767-89A7-8493F5055789}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A55D17A7-3A34-4767-89A7-8493F5055789}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A55D17A7-3A34-4767-89A7-8493F5055789}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

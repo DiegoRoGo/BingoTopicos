@@ -6,7 +6,7 @@ namespace WcfBingo.Dominio.Acciones
 {
     public class AccionesBingo
     {
-        public void MarkBoards(List<Board> Players, int number)
+        public void MarkBoards(ref List<Board> Players, int number)
         {
             bool marked;
             foreach (Board Player in Players)
@@ -33,7 +33,7 @@ namespace WcfBingo.Dominio.Acciones
         {
             bool winner;
             List<Board> WinningPlayers = new List<Board>();
-            foreach(Board Player in players)
+            foreach (Board Player in players)
             {
                 winner = true;
                 for (int i = 0; i < 5; i++)
@@ -57,7 +57,9 @@ namespace WcfBingo.Dominio.Acciones
 
         public Board GenerateBoard()
         {
+            List<int> UsedNumbers = new List<int>();
             Random num = new Random();
+            int RandomNumber;
             int max = 15;
             int min = 1;
 
@@ -67,7 +69,12 @@ namespace WcfBingo.Dominio.Acciones
             {
                 for (int j = 0; j < 5; j++)
                 {
-                    newBoard.GameBoard[i][j] = new Cell(num.Next(min, max+1));
+                    do
+                    {
+                        RandomNumber = num.Next(min, max + 1);
+                    } while (UsedNumbers.Contains(RandomNumber));
+                    UsedNumbers.Add(RandomNumber);
+                    newBoard.GameBoard[j][i] = new Cell(RandomNumber);
                 }
                 min = min + 15;
                 max = max + 15;

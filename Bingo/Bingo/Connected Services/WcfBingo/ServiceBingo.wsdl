@@ -4,22 +4,9 @@
     <xsd:schema targetNamespace="http://tempuri.org/Imports">
       <xsd:import schemaLocation="http://localhost:50402/Dominio/Servicios/ServiceBingo.svc?xsd=xsd0" namespace="http://tempuri.org/" />
       <xsd:import schemaLocation="http://localhost:50402/Dominio/Servicios/ServiceBingo.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
-      <xsd:import schemaLocation="http://localhost:50402/Dominio/Servicios/ServiceBingo.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/WcfBingo" />
-      <xsd:import schemaLocation="http://localhost:50402/Dominio/Servicios/ServiceBingo.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/WcfBingo.Dominio.Modelos" />
+      <xsd:import schemaLocation="http://localhost:50402/Dominio/Servicios/ServiceBingo.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/WcfBingo.Dominio.Modelos" />
     </xsd:schema>
   </wsdl:types>
-  <wsdl:message name="IServiceBingo_GetData_InputMessage">
-    <wsdl:part name="parameters" element="tns:GetData" />
-  </wsdl:message>
-  <wsdl:message name="IServiceBingo_GetData_OutputMessage">
-    <wsdl:part name="parameters" element="tns:GetDataResponse" />
-  </wsdl:message>
-  <wsdl:message name="IServiceBingo_GetDataUsingDataContract_InputMessage">
-    <wsdl:part name="parameters" element="tns:GetDataUsingDataContract" />
-  </wsdl:message>
-  <wsdl:message name="IServiceBingo_GetDataUsingDataContract_OutputMessage">
-    <wsdl:part name="parameters" element="tns:GetDataUsingDataContractResponse" />
-  </wsdl:message>
   <wsdl:message name="IServiceBingo_MarkBoards_InputMessage">
     <wsdl:part name="parameters" element="tns:MarkBoards" />
   </wsdl:message>
@@ -45,14 +32,6 @@
     <wsdl:part name="parameters" element="tns:GenerateWinningPatternResponse" />
   </wsdl:message>
   <wsdl:portType name="IServiceBingo">
-    <wsdl:operation name="GetData">
-      <wsdl:input wsaw:Action="http://tempuri.org/IServiceBingo/GetData" message="tns:IServiceBingo_GetData_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IServiceBingo/GetDataResponse" message="tns:IServiceBingo_GetData_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="GetDataUsingDataContract">
-      <wsdl:input wsaw:Action="http://tempuri.org/IServiceBingo/GetDataUsingDataContract" message="tns:IServiceBingo_GetDataUsingDataContract_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IServiceBingo/GetDataUsingDataContractResponse" message="tns:IServiceBingo_GetDataUsingDataContract_OutputMessage" />
-    </wsdl:operation>
     <wsdl:operation name="MarkBoards">
       <wsdl:input wsaw:Action="http://tempuri.org/IServiceBingo/MarkBoards" message="tns:IServiceBingo_MarkBoards_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IServiceBingo/MarkBoardsResponse" message="tns:IServiceBingo_MarkBoards_OutputMessage" />
@@ -72,24 +51,6 @@
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IServiceBingo" type="tns:IServiceBingo">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
-    <wsdl:operation name="GetData">
-      <soap:operation soapAction="http://tempuri.org/IServiceBingo/GetData" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="GetDataUsingDataContract">
-      <soap:operation soapAction="http://tempuri.org/IServiceBingo/GetDataUsingDataContract" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
     <wsdl:operation name="MarkBoards">
       <soap:operation soapAction="http://tempuri.org/IServiceBingo/MarkBoards" style="document" />
       <wsdl:input>

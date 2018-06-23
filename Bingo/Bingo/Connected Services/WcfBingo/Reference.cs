@@ -8,71 +8,10 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Bingo.BingoWCF {
+namespace Bingo.WcfBingo {
     using System.Runtime.Serialization;
     using System;
     
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="CompositeType", Namespace="http://schemas.datacontract.org/2004/07/WcfBingo")]
-    [System.SerializableAttribute()]
-    public partial class CompositeType : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private bool BoolValueField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string StringValueField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public bool BoolValue {
-            get {
-                return this.BoolValueField;
-            }
-            set {
-                if ((this.BoolValueField.Equals(value) != true)) {
-                    this.BoolValueField = value;
-                    this.RaisePropertyChanged("BoolValue");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string StringValue {
-            get {
-                return this.StringValueField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.StringValueField, value) != true)) {
-                    this.StringValueField = value;
-                    this.RaisePropertyChanged("StringValue");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
@@ -84,7 +23,7 @@ namespace Bingo.BingoWCF {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private Bingo.BingoWCF.Cell[][] GameBoardField;
+        private System.Collections.Generic.List<System.Collections.Generic.List<Bingo.WcfBingo.Cell>> GameBoardField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -97,7 +36,7 @@ namespace Bingo.BingoWCF {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public Bingo.BingoWCF.Cell[][] GameBoard {
+        public System.Collections.Generic.List<System.Collections.Generic.List<Bingo.WcfBingo.Cell>> GameBoard {
             get {
                 return this.GameBoardField;
             }
@@ -181,53 +120,78 @@ namespace Bingo.BingoWCF {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="BingoWCF.IServiceBingo")]
+    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="WcfBingo.IServiceBingo")]
     public interface IServiceBingo {
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceBingo/GetData", ReplyAction="http://tempuri.org/IServiceBingo/GetDataResponse")]
-        string GetData(int value);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceBingo/GetData", ReplyAction="http://tempuri.org/IServiceBingo/GetDataResponse")]
-        System.Threading.Tasks.Task<string> GetDataAsync(int value);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceBingo/GetDataUsingDataContract", ReplyAction="http://tempuri.org/IServiceBingo/GetDataUsingDataContractResponse")]
-        Bingo.BingoWCF.CompositeType GetDataUsingDataContract(Bingo.BingoWCF.CompositeType composite);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceBingo/GetDataUsingDataContract", ReplyAction="http://tempuri.org/IServiceBingo/GetDataUsingDataContractResponse")]
-        System.Threading.Tasks.Task<Bingo.BingoWCF.CompositeType> GetDataUsingDataContractAsync(Bingo.BingoWCF.CompositeType composite);
-        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceBingo/MarkBoards", ReplyAction="http://tempuri.org/IServiceBingo/MarkBoardsResponse")]
-        void MarkBoards(Bingo.BingoWCF.Board[] Players, int number);
+        Bingo.WcfBingo.MarkBoardsResponse MarkBoards(Bingo.WcfBingo.MarkBoardsRequest request);
         
+        // CODEGEN: Generando contrato de mensaje, ya que la operación tiene múltiples valores de devolución.
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceBingo/MarkBoards", ReplyAction="http://tempuri.org/IServiceBingo/MarkBoardsResponse")]
-        System.Threading.Tasks.Task MarkBoardsAsync(Bingo.BingoWCF.Board[] Players, int number);
+        System.Threading.Tasks.Task<Bingo.WcfBingo.MarkBoardsResponse> MarkBoardsAsync(Bingo.WcfBingo.MarkBoardsRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceBingo/GetWinningBoards", ReplyAction="http://tempuri.org/IServiceBingo/GetWinningBoardsResponse")]
-        Bingo.BingoWCF.Board[] GetWinningBoards(Bingo.BingoWCF.Board[] players, Bingo.BingoWCF.Board winningPattern);
+        System.Collections.Generic.List<Bingo.WcfBingo.Board> GetWinningBoards(System.Collections.Generic.List<Bingo.WcfBingo.Board> players, Bingo.WcfBingo.Board winningPattern);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceBingo/GetWinningBoards", ReplyAction="http://tempuri.org/IServiceBingo/GetWinningBoardsResponse")]
-        System.Threading.Tasks.Task<Bingo.BingoWCF.Board[]> GetWinningBoardsAsync(Bingo.BingoWCF.Board[] players, Bingo.BingoWCF.Board winningPattern);
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Bingo.WcfBingo.Board>> GetWinningBoardsAsync(System.Collections.Generic.List<Bingo.WcfBingo.Board> players, Bingo.WcfBingo.Board winningPattern);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceBingo/GenerateBoards", ReplyAction="http://tempuri.org/IServiceBingo/GenerateBoardsResponse")]
-        Bingo.BingoWCF.Board[] GenerateBoards(int amount);
+        System.Collections.Generic.List<Bingo.WcfBingo.Board> GenerateBoards(int amount);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceBingo/GenerateBoards", ReplyAction="http://tempuri.org/IServiceBingo/GenerateBoardsResponse")]
-        System.Threading.Tasks.Task<Bingo.BingoWCF.Board[]> GenerateBoardsAsync(int amount);
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Bingo.WcfBingo.Board>> GenerateBoardsAsync(int amount);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceBingo/GenerateWinningPattern", ReplyAction="http://tempuri.org/IServiceBingo/GenerateWinningPatternResponse")]
-        Bingo.BingoWCF.Board GenerateWinningPattern();
+        Bingo.WcfBingo.Board GenerateWinningPattern();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceBingo/GenerateWinningPattern", ReplyAction="http://tempuri.org/IServiceBingo/GenerateWinningPatternResponse")]
-        System.Threading.Tasks.Task<Bingo.BingoWCF.Board> GenerateWinningPatternAsync();
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface IServiceBingoChannel : Bingo.BingoWCF.IServiceBingo, System.ServiceModel.IClientChannel {
+        System.Threading.Tasks.Task<Bingo.WcfBingo.Board> GenerateWinningPatternAsync();
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class ServiceBingoClient : System.ServiceModel.ClientBase<Bingo.BingoWCF.IServiceBingo>, Bingo.BingoWCF.IServiceBingo {
+    [System.ServiceModel.MessageContractAttribute(WrapperName="MarkBoards", WrapperNamespace="http://tempuri.org/", IsWrapped=true)]
+    public partial class MarkBoardsRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=0)]
+        public System.Collections.Generic.List<Bingo.WcfBingo.Board> Players;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=1)]
+        public int number;
+        
+        public MarkBoardsRequest() {
+        }
+        
+        public MarkBoardsRequest(System.Collections.Generic.List<Bingo.WcfBingo.Board> Players, int number) {
+            this.Players = Players;
+            this.number = number;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="MarkBoardsResponse", WrapperNamespace="http://tempuri.org/", IsWrapped=true)]
+    public partial class MarkBoardsResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=0)]
+        public System.Collections.Generic.List<Bingo.WcfBingo.Board> Players;
+        
+        public MarkBoardsResponse() {
+        }
+        
+        public MarkBoardsResponse(System.Collections.Generic.List<Bingo.WcfBingo.Board> Players) {
+            this.Players = Players;
+        }
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public interface IServiceBingoChannel : Bingo.WcfBingo.IServiceBingo, System.ServiceModel.IClientChannel {
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class ServiceBingoClient : System.ServiceModel.ClientBase<Bingo.WcfBingo.IServiceBingo>, Bingo.WcfBingo.IServiceBingo {
         
         public ServiceBingoClient() {
         }
@@ -248,51 +212,44 @@ namespace Bingo.BingoWCF {
                 base(binding, remoteAddress) {
         }
         
-        public string GetData(int value) {
-            return base.Channel.GetData(value);
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Bingo.WcfBingo.MarkBoardsResponse Bingo.WcfBingo.IServiceBingo.MarkBoards(Bingo.WcfBingo.MarkBoardsRequest request) {
+            return base.Channel.MarkBoards(request);
         }
         
-        public System.Threading.Tasks.Task<string> GetDataAsync(int value) {
-            return base.Channel.GetDataAsync(value);
+        public void MarkBoards(ref System.Collections.Generic.List<Bingo.WcfBingo.Board> Players, int number) {
+            Bingo.WcfBingo.MarkBoardsRequest inValue = new Bingo.WcfBingo.MarkBoardsRequest();
+            inValue.Players = Players;
+            inValue.number = number;
+            Bingo.WcfBingo.MarkBoardsResponse retVal = ((Bingo.WcfBingo.IServiceBingo)(this)).MarkBoards(inValue);
+            Players = retVal.Players;
         }
         
-        public Bingo.BingoWCF.CompositeType GetDataUsingDataContract(Bingo.BingoWCF.CompositeType composite) {
-            return base.Channel.GetDataUsingDataContract(composite);
+        public System.Threading.Tasks.Task<Bingo.WcfBingo.MarkBoardsResponse> MarkBoardsAsync(Bingo.WcfBingo.MarkBoardsRequest request) {
+            return base.Channel.MarkBoardsAsync(request);
         }
         
-        public System.Threading.Tasks.Task<Bingo.BingoWCF.CompositeType> GetDataUsingDataContractAsync(Bingo.BingoWCF.CompositeType composite) {
-            return base.Channel.GetDataUsingDataContractAsync(composite);
-        }
-        
-        public void MarkBoards(Bingo.BingoWCF.Board[] Players, int number) {
-            base.Channel.MarkBoards(Players, number);
-        }
-        
-        public System.Threading.Tasks.Task MarkBoardsAsync(Bingo.BingoWCF.Board[] Players, int number) {
-            return base.Channel.MarkBoardsAsync(Players, number);
-        }
-        
-        public Bingo.BingoWCF.Board[] GetWinningBoards(Bingo.BingoWCF.Board[] players, Bingo.BingoWCF.Board winningPattern) {
+        public System.Collections.Generic.List<Bingo.WcfBingo.Board> GetWinningBoards(System.Collections.Generic.List<Bingo.WcfBingo.Board> players, Bingo.WcfBingo.Board winningPattern) {
             return base.Channel.GetWinningBoards(players, winningPattern);
         }
         
-        public System.Threading.Tasks.Task<Bingo.BingoWCF.Board[]> GetWinningBoardsAsync(Bingo.BingoWCF.Board[] players, Bingo.BingoWCF.Board winningPattern) {
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Bingo.WcfBingo.Board>> GetWinningBoardsAsync(System.Collections.Generic.List<Bingo.WcfBingo.Board> players, Bingo.WcfBingo.Board winningPattern) {
             return base.Channel.GetWinningBoardsAsync(players, winningPattern);
         }
         
-        public Bingo.BingoWCF.Board[] GenerateBoards(int amount) {
+        public System.Collections.Generic.List<Bingo.WcfBingo.Board> GenerateBoards(int amount) {
             return base.Channel.GenerateBoards(amount);
         }
         
-        public System.Threading.Tasks.Task<Bingo.BingoWCF.Board[]> GenerateBoardsAsync(int amount) {
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Bingo.WcfBingo.Board>> GenerateBoardsAsync(int amount) {
             return base.Channel.GenerateBoardsAsync(amount);
         }
         
-        public Bingo.BingoWCF.Board GenerateWinningPattern() {
+        public Bingo.WcfBingo.Board GenerateWinningPattern() {
             return base.Channel.GenerateWinningPattern();
         }
         
-        public System.Threading.Tasks.Task<Bingo.BingoWCF.Board> GenerateWinningPatternAsync() {
+        public System.Threading.Tasks.Task<Bingo.WcfBingo.Board> GenerateWinningPatternAsync() {
             return base.Channel.GenerateWinningPatternAsync();
         }
     }

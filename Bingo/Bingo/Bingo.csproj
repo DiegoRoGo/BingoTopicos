@@ -44,7 +44,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Connected Services\BingoWCF\Reference.cs">
+    <Compile Include="Connected Services\WcfBingo\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
@@ -54,23 +54,20 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <None Include="Connected Services\BingoWCF\Bingo.BingoWCF.Board.datasource">
+    <None Include="Connected Services\WcfBingo\Bingo.WcfBingo.Board.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\BingoWCF\Bingo.BingoWCF.CompositeType.datasource">
+    <None Include="Connected Services\WcfBingo\Bingo.WcfBingo.MarkBoardsResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\BingoWCF\ServiceBingo.wsdl" />
-    <None Include="Connected Services\BingoWCF\ServiceBingo.xsd">
+    <None Include="Connected Services\WcfBingo\ServiceBingo.wsdl" />
+    <None Include="Connected Services\WcfBingo\ServiceBingo.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\BingoWCF\ServiceBingo1.xsd">
+    <None Include="Connected Services\WcfBingo\ServiceBingo1.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\BingoWCF\ServiceBingo2.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Connected Services\BingoWCF\ServiceBingo3.xsd">
+    <None Include="Connected Services\WcfBingo\ServiceBingo2.xsd">
       <SubType>Designer</SubType>
     </None>
   </ItemGroup>
@@ -78,19 +75,19 @@
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <ItemGroup>
-    <WCFMetadataStorage Include="Connected Services\BingoWCF\" />
+    <WCFMetadataStorage Include="Connected Services\WcfBingo\" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Connected Services\BingoWCF\ServiceBingo.disco" />
+    <None Include="Connected Services\WcfBingo\ServiceBingo.disco" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Connected Services\BingoWCF\configuration91.svcinfo" />
+    <None Include="Connected Services\WcfBingo\configuration91.svcinfo" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Connected Services\BingoWCF\configuration.svcinfo" />
+    <None Include="Connected Services\WcfBingo\configuration.svcinfo" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Connected Services\BingoWCF\Reference.svcmap">
+    <None Include="Connected Services\WcfBingo\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>

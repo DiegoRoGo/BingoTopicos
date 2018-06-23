@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="a6ba6aed-3641-479b-a641-b748ebef74cd" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.Generic.List`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:50402/Dominio/Servicios/ServiceBingo.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="ServiceBingo.xsd" MetadataType="Schema" ID="e85431ee-9e09-4634-b227-6588053d9f90" SourceId="1" SourceUrl="http://localhost:50402/Dominio/Servicios/ServiceBingo.svc?xsd=xsd1" />
+    <MetadataFile FileName="ServiceBingo1.xsd" MetadataType="Schema" ID="6beea5df-20ee-4875-b9a5-5ab7bc948917" SourceId="1" SourceUrl="http://localhost:50402/Dominio/Servicios/ServiceBingo.svc?xsd=xsd2" />
+    <MetadataFile FileName="ServiceBingo2.xsd" MetadataType="Schema" ID="016d153a-2aca-4f72-92a3-43fa69a77f1e" SourceId="1" SourceUrl="http://localhost:50402/Dominio/Servicios/ServiceBingo.svc?xsd=xsd0" />
+    <MetadataFile FileName="ServiceBingo.disco" MetadataType="Disco" ID="79756169-fcde-4d3d-bc35-d0c7e12b9143" SourceId="1" SourceUrl="http://localhost:50402/Dominio/Servicios/ServiceBingo.svc?disco" />
+    <MetadataFile FileName="ServiceBingo.wsdl" MetadataType="Wsdl" ID="52758265-d224-46d9-bc0c-dfcfd1704b4d" SourceId="1" SourceUrl="http://localhost:50402/Dominio/Servicios/ServiceBingo.svc?wsdl" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

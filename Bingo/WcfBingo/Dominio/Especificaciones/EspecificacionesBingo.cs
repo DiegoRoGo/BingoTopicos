@@ -6,11 +6,9 @@ namespace WcfBingo.Dominio.Especificaciones
 {
     public class EspecificacionesBingo
     {
-        public List<int> PlayedNumbers;
-
-        public void MarkBoards(List<Board> Players, int number)
+        public void MarkBoards(ref List<Board> Players, int number)
         {
-            new Acciones.AccionesBingo().MarkBoards(Players, number);
+            new Acciones.AccionesBingo().MarkBoards(ref Players, number);
         }
 
         public List<Board> GetWinningBoards(List<Board> players, Board winningPattern)
@@ -27,7 +25,7 @@ namespace WcfBingo.Dominio.Especificaciones
                 do
                 {
                     newBoard = new Acciones.AccionesBingo().GenerateBoard();
-                } while (!new ValidacionesBingo().BoardAlreadyRegistered(newBoard, Boards));
+                } while (new ValidacionesBingo().BoardAlreadyRegistered(newBoard, Boards));
                 Boards.Add(newBoard);
             }
             return Boards;

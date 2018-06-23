@@ -3,8 +3,6 @@ using WcfBingo.Dominio.Modelos;
 
 namespace WcfBingo.Dominio.Repositorios
 {
-
-
     public class Patrones
     {
 
@@ -60,7 +58,7 @@ namespace WcfBingo.Dominio.Repositorios
 
         private Board letraH(Board pattern)
         {
-            for (int i = 0; i < 4; i++)
+            for (int i = 0; i < 5; i++)
             {
                 pattern.GameBoard[i][0].IsMarked = true;
                 pattern.GameBoard[i][4].IsMarked = true;
