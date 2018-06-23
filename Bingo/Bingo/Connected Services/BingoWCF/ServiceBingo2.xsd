@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:import schemaLocation="http://localhost:50402/Dominio/Servicios/ServiceBingo.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/WcfBingo" />
-  <xs:import schemaLocation="http://localhost:50402/Dominio/Servicios/ServiceBingo.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/BingoWCF.Dominio.Modelos" />
+  <xs:import schemaLocation="http://localhost:50402/Dominio/Servicios/ServiceBingo.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/WcfBingo.Dominio.Modelos" />
   <xs:element name="GetData">
     <xs:complexType>
       <xs:sequence>
@@ -33,7 +33,7 @@
   <xs:element name="MarkBoards">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/BingoWCF.Dominio.Modelos" minOccurs="0" name="Players" nillable="true" type="q3:ArrayOfBoard" />
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/WcfBingo.Dominio.Modelos" minOccurs="0" name="Players" nillable="true" type="q3:ArrayOfBoard" />
         <xs:element minOccurs="0" name="number" type="xs:int" />
       </xs:sequence>
     </xs:complexType>
@@ -46,15 +46,15 @@
   <xs:element name="GetWinningBoards">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/BingoWCF.Dominio.Modelos" minOccurs="0" name="players" nillable="true" type="q4:ArrayOfBoard" />
-        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/BingoWCF.Dominio.Modelos" minOccurs="0" name="winningPattern" nillable="true" type="q5:Board" />
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/WcfBingo.Dominio.Modelos" minOccurs="0" name="players" nillable="true" type="q4:ArrayOfBoard" />
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/WcfBingo.Dominio.Modelos" minOccurs="0" name="winningPattern" nillable="true" type="q5:Board" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="GetWinningBoardsResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/BingoWCF.Dominio.Modelos" minOccurs="0" name="GetWinningBoardsResult" nillable="true" type="q6:ArrayOfBoard" />
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/WcfBingo.Dominio.Modelos" minOccurs="0" name="GetWinningBoardsResult" nillable="true" type="q6:ArrayOfBoard" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -68,7 +68,7 @@
   <xs:element name="GenerateBoardsResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/BingoWCF.Dominio.Modelos" minOccurs="0" name="GenerateBoardsResult" nillable="true" type="q7:ArrayOfBoard" />
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/WcfBingo.Dominio.Modelos" minOccurs="0" name="GenerateBoardsResult" nillable="true" type="q7:ArrayOfBoard" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -80,7 +80,7 @@
   <xs:element name="GenerateWinningPatternResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/BingoWCF.Dominio.Modelos" minOccurs="0" name="GenerateWinningPatternResult" nillable="true" type="q8:Board" />
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/WcfBingo.Dominio.Modelos" minOccurs="0" name="GenerateWinningPatternResult" nillable="true" type="q8:Board" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

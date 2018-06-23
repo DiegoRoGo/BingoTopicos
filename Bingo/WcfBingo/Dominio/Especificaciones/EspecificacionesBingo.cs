@@ -1,11 +1,8 @@
-﻿using BingoWCF.Dominio.Modelos;
-using System;
+﻿using WcfBingo.Dominio.Modelos;
+using WcfBingo.Dominio.Validaciones;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace BingoWCF.Dominio.Especificaciones
+namespace WcfBingo.Dominio.Especificaciones
 {
     public class EspecificacionesBingo
     {
@@ -26,7 +23,12 @@ namespace BingoWCF.Dominio.Especificaciones
             List<Board> Boards = new List<Board>();
             for (int i = 1; i <= amount; i++)
             {
-                Boards.Add(new Acciones.AccionesBingo().GenerateBoard());
+                Board newBoard = null;
+                do
+                {
+                    newBoard = new Acciones.AccionesBingo().GenerateBoard();
+                } while (!new ValidacionesBingo().BoardAlreadyRegistered(newBoard, Boards));
+                Boards.Add(newBoard);
             }
             return Boards;
         }

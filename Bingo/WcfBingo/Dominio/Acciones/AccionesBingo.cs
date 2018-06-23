@@ -1,11 +1,8 @@
-﻿using BingoWCF.Dominio.Modelos;
+﻿using WcfBingo.Dominio.Modelos;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace BingoWCF.Dominio.Acciones
+namespace WcfBingo.Dominio.Acciones
 {
     public class AccionesBingo
     {

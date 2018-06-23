@@ -1,7 +1,7 @@
 ﻿using System;
-using BingoWCF.Dominio.Modelos;
+using WcfBingo.Dominio.Modelos;
 
-namespace BingoWCF.Dominio.Repositorios
+namespace WcfBingo.Dominio.Repositorios
 {
 
 

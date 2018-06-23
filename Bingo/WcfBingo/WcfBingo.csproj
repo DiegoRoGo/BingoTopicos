@@ -74,11 +74,11 @@
       <DependentUpon>ServiceBingo.svc</DependentUpon>
     </Compile>
     <Compile Include="Dominio\Interfaces\IServiceBingo.cs" />
+    <Compile Include="Dominio\Validaciones\ValidacionesBingo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Dominio\Validaciones\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Web.Debug.config">

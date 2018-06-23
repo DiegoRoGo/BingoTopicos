@@ -1,11 +1,7 @@
-﻿using BingoWCF.Dominio.Modelos;
-using BingoWCF.Dominio.Especificaciones;
+﻿using WcfBingo.Dominio.Modelos;
+using WcfBingo.Dominio.Especificaciones;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.Serialization;
-using System.ServiceModel;
-using System.Text;
 
 namespace WcfBingo
 {
