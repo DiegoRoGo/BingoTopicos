@@ -19,9 +19,9 @@ namespace BingoWCF.Dominio.Acciones
                 {
                     for (int j = 0; j < 5; j++)
                     {
-                        if (Player.GameBoard[i, j].Value == number)
+                        if (Player.GameBoard[i][j].Value == number)
                         {
-                            Player.GameBoard[i, j].IsMarked = true;
+                            Player.GameBoard[i][j].IsMarked = true;
                             marked = true;
                             break;
                         }
@@ -42,7 +42,7 @@ namespace BingoWCF.Dominio.Acciones
                 for (int i = 0; i < 5; i++)
                 {
                     for (int j = 0; j < 5; j++)
-                        if (winningPattern.GameBoard[i, j].IsMarked && !Player.GameBoard[i, j].IsMarked)
+                        if (winningPattern.GameBoard[i][j].IsMarked && !Player.GameBoard[i][j].IsMarked)
                         {
                             winner = false;
                             break;
@@ -56,6 +56,32 @@ namespace BingoWCF.Dominio.Acciones
                 }
             }
             return WinningPlayers;
+        }
+
+        public Board GenerateBoard()
+        {
+            Random num = new Random();
+            int max = 15;
+            int min = 1;
+
+            Board newBoard = new Board();
+
+            for (int i = 0; i < 5; i++)
+            {
+                for (int j = 0; j < 5; j++)
+                {
+                    newBoard.GameBoard[i][j] = new Cell(num.Next(min, max+1));
+                }
+                min = min + 15;
+                max = max + 15;
+            }
+
+            return newBoard;
+        }
+
+        public Board GenerateWinningPattern()
+        {
+            return new Repositorios.Patrones().GenerateWinningPattern();
         }
     }
 }

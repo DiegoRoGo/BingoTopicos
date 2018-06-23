@@ -66,12 +66,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Dominio\Acciones\AccionesBingo.cs" />
-    <Compile Include="Dominio\Acciones\FillBoard.cs" />
-    <Compile Include="Dominio\Especificaciones\BoardGenerator.cs" />
     <Compile Include="Dominio\Especificaciones\EspecificacionesBingo.cs" />
     <Compile Include="Dominio\Modelos\Board.cs" />
     <Compile Include="Dominio\Modelos\Cell.cs" />
-    <Compile Include="Dominio\Modelos\Column.cs" />
+    <Compile Include="Dominio\Repositorios\Patrones.cs" />
     <Compile Include="Dominio\Servicios\ServiceBingo.svc.cs">
       <DependentUpon>ServiceBingo.svc</DependentUpon>
     </Compile>
@@ -80,7 +78,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Dominio\Repositorios\" />
     <Folder Include="Dominio\Validaciones\" />
   </ItemGroup>
   <ItemGroup>

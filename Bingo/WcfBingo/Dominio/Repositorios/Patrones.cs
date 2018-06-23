@@ -1,112 +1,99 @@
 ﻿using System;
+using BingoWCF.Dominio.Modelos;
 
-namespace BingoWCF.Dominio.Patrones
+namespace BingoWCF.Dominio.Repositorios
 {
 
 
     public class Patrones
     {
 
-        public Boolean[,] GenPatron()
+        public Board GenerateWinningPattern()
         {
-            Boolean[,] resp = new Boolean[5, 5];
-            Random rnd = new Random();
-            int rndnum = rnd.Next(1,6);
-
-
-            switch (rndnum)
+            Board pattern = new Board();
+            pattern.SetDefault();
+            
+            switch (new Random().Next(1, 6))
             {
                 case 1:
-                   resp= cartonLleno();
+                    pattern = cartonLleno(pattern);
                     break;
 
                 case 2:
-                    resp= esquinas();
+                    pattern = esquinas(pattern);
                     break;
 
                 case 3:
-                    resp= letraH();
+                    pattern = letraH(pattern);
                     break;
 
                 case 4:
-                    resp= letraX();
+                    pattern = letraX(pattern);
                     break;
 
                 case 5:
-                    resp= letraU();
+                    pattern = letraU(pattern);
                     break;
 
             }
 
-            return resp;
-
-
+            return pattern;
         }
-
-
-        public Boolean[,] cartonLleno()
+        
+        private Board cartonLleno(Board pattern)
         {
-            bool[,] array = { { true, true, true,true, true },
-                              { true, true, true,true, true },
-                              { true, true, true,true, true },
-                              { true, true, true,true, true },
-                              { true, true, true,true, true },};
-            return array;
+            for (int i = 0; i < 5; i++)
+                for (int j = 0; j < 5; j++)
+                    pattern.GameBoard[i][j].IsMarked = true;
+            return pattern;
         }
 
-
-
-        public Boolean[,] esquinas()
+        private Board esquinas(Board pattern)
         {
-            bool[,] array = {   { true, false, false,false, true },
-                                { false, false, false,false, false },
-                                { false, false, false,false, false },
-                                { false,false, false,false, false },
-                                { true, false, false,false, true },};
-            return array;
+            pattern.GameBoard[0][0].IsMarked = true;
+            pattern.GameBoard[0][4].IsMarked = true;
+            pattern.GameBoard[4][0].IsMarked = true;
+            pattern.GameBoard[4][4].IsMarked = true;
+
+            return pattern;
         }
 
-
-
-        public Boolean[,] letraH()
+        private Board letraH(Board pattern)
         {
-            bool[,] array = {   { true, false, false,false, true },
-                                { true, false, false,false, true },
-                                { true, true, true, true, true },
-                                { true,false, false,false, true },
-                                { true, false, false,false, true },};
-
-            return array;
+            for (int i = 0; i < 4; i++)
+            {
+                pattern.GameBoard[i][0].IsMarked = true;
+                pattern.GameBoard[i][4].IsMarked = true;
+            }
+            for (int i = 0; i < 5; i++)
+                pattern.GameBoard[2][i].IsMarked = true;
+            return pattern;
         }
-
-
-        public Boolean[,] letraX()
+        
+        private Board letraX(Board pattern)
         {
-            bool[,] array = {   { true, false, false,false, true },
-                                { false, true, false,true, false },
-                                { false, false, true, false, false },
-                                { false,true, false,true, false },
-                                { true, false, false,false, true },};
+            for (int i = 0; i < 5; i++)
+            {
+                pattern.GameBoard[i][i].IsMarked = true;
+                pattern.GameBoard[i][4-i].IsMarked = true;
+            }
 
-            return array;
+            return pattern;
         }
-
-
-        public Boolean[,] letraU()
+        
+        private Board letraU(Board pattern)
         {
-            bool[,] array = {   { true, false, false,false, true },
-                                { true, false, false,false, true },
-                                { true, false, false,false, true },
-                                { true,false, false,false, true },
-                                { true, true, true,true, true },};
-            return array;
+            for (int i = 0; i < 4; i++)
+            {
+                pattern.GameBoard[i][0].IsMarked = true;
+                pattern.GameBoard[i][4].IsMarked = true;
+            }
+            for(int i = 0; i < 5; i++)
+                pattern.GameBoard[4][i].IsMarked = true;
+
+            return pattern;
         }
-
-
-
     }
-
-
 }
 
 

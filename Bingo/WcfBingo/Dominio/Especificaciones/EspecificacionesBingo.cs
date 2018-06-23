@@ -20,5 +20,20 @@ namespace BingoWCF.Dominio.Especificaciones
         {
             return new Acciones.AccionesBingo().GetWinningBoards(players, winningPattern);
         }
+
+        public List<Board> GenerateBoards(int amount)
+        {
+            List<Board> Boards = new List<Board>();
+            for (int i = 1; i <= amount; i++)
+            {
+                Boards.Add(new Acciones.AccionesBingo().GenerateBoard());
+            }
+            return Boards;
+        }
+
+        public Board GenerateWinningPattern()
+        {
+            return new Acciones.AccionesBingo().GenerateWinningPattern();
+        }
     }
 }

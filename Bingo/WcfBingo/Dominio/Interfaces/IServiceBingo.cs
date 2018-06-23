@@ -24,6 +24,12 @@ namespace WcfBingo
 
         [OperationContract]
         List<Board> GetWinningBoards(List<Board> players, Board winningPattern);
+
+        [OperationContract]
+        List<Board> GenerateBoards(int amount);
+
+        [OperationContract]
+        Board GenerateWinningPattern();
     }
 
     // Use a data contract as illustrated in the sample below to add composite types to service operations.

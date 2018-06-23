@@ -39,5 +39,15 @@ namespace WcfBingo
         {
             new EspecificacionesBingo().MarkBoards(Players, number);
         }
+
+        public List<Board> GenerateBoards(int amount)
+        {
+            return new EspecificacionesBingo().GenerateBoards(amount);
+        }
+
+        public Board GenerateWinningPattern()
+        {
+            return new EspecificacionesBingo().GenerateWinningPattern();
+        }
     }
 }
